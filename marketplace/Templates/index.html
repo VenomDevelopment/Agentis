@@ -1,0 +1,425 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGENTIS - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <Header class="header_section">
+        <div class="container">
+            <div class="header_inner_main">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="{% url 'index' %}">Agentis</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'agents' %}">Agents</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'index' %}#how-it-works">How It Works</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'pricing' %}">Pricing</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'affiliate' %}">Affiliate</a>
+                                </li>
+                                <!-- <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li> -->
+                                <!-- <li class="nav-item">
+                                <a class="nav-link" href="dashboard/dashboard.html">Dashboard</a>
+                            </li> -->
+                            </ul>
+                            <div class="navbtn" role="search">
+                                {% if user.is_authenticated %}
+                                <a href="{% url 'logout' %}"><button type="button">Log Out</button></a>
+                                {% else %}
+                                <a href="{% url 'signup' %}"><button type="button">Sign Up</button></a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </Header>
+
+    <section class="hero_section">
+        <div class="container">
+            <div class="hero_text_main">
+                <div data-aos="fade-down">
+                    <h1>Automate Your Business with AI Agents Built for You</h1>
+                </div>
+                <div class="hero_profile">
+                    <img src="{% static 'img/pro.svg' %}" alt="">
+                    <span>100+ Ai Agents Deployed</span>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="hero_text1">
+                            <p>From answering calls to sending quotes — Agentis AI creates tailored AI assistants that
+                                save you time, grow your business, and work 24/7.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="hero_two_btns justify-content-end" data-aos="fade-up">
+                            <a href="{% url 'agents' %}"><button type="button">Explore AI Agents</button></a>
+                            <a href="{% url 'custom_agent' %}"><button type="button">Get a Custom Agent</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="home_section_one">
+        <div class="container">
+            <div class="title_div">
+                <h1 data-aos="fade-down">Lets See How It Works</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="home_sec1_card_body" data-aos="fade-down">
+                        <div class="home_sec1_card_txt1">
+                            <h4>Choose an AI Agent</h4>
+                            <p>Pick from our ready-made, high-impact automations — no coding needed.</p>
+                        </div>
+                        <div class="home_sec1_card_txt2">
+                            <h1>01</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="home_sec1_card_body" data-aos="fade-down">
+                        <div class="home_sec1_card_txt1">
+                            <h4>Configure in Minutes</h4>
+                            <p>Fill a short form to tell us about your business. We take care of the rest.</p>
+                        </div>
+                        <div class="home_sec1_card_txt2">
+                            <h1>02</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="home_sec1_card_body" data-aos="fade-down">
+                        <div class="home_sec1_card_txt1">
+                            <h4>Launch in 48 Hours</h4>
+                            <p>We build, test, and deploy your AI agent with live support and updates.</p>
+                        </div>
+                        <div class="home_sec1_card_txt2">
+                            <h1>03</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="home_sec1_last_card_body" data-aos="flip-left">
+                        <h1>Start Now</h1>
+                        <img class="home_sec1_last_img" src="{% static 'img/rocket.svg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="home_section_two">
+        <div class="container">
+            <div class="title_div" data-aos="fade-down">
+                <h2>Who It’s For</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="home_sec2_card_body_div" data-aos="fade-down">
+                        <div class="home_sec2_card_img">
+                            <img src="{% static 'img/who1.svg' %}" alt="">
+                            <h5>
+                                <span>Small Business Owners</span>
+                                <img src="{% static 'img/mdi_arrow-up.svg' %}" alt="">
+                            </h5>
+                        </div>
+                        <p>Save time on emails, calls, and lead generation.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="home_sec2_card_body_div" data-aos="fade-down">
+                        <div class="home_sec2_card_img">
+                            <img src="{% static 'img/who2.svg' %}" alt="">
+                            <h5>
+                                <span>Service Providers</span>
+                                <img src="{% static 'img/mdi_arrow-up.svg' %}" alt="">
+                            </h5>
+                        </div>
+                        <p>Automate bookings, reminders, and follow-ups.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <div class="home_sec2_card_body_div" data-aos="fade-down">
+                        <div class="home_sec2_card_img">
+                            <img src="{% static 'img/who3.svg' %}" alt="">
+                            <h5>
+                                <span>Teams with <br> Limited Time</span>
+                                <img src="{% static 'img/mdi_arrow-up.svg' %}" alt="">
+                            </h5>
+                        </div>
+                        <p>Let AI handle repetitive tasks so you don’t have to.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="home_section_three">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="home_sec3_txt" data-aos="fade-down">
+                        <h1>Trusted by Local & Digital Businesses</h1>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-12 col-sm-12">
+                    <div class="home_sec3_swiper_main">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="home_sec3_card_body">
+                                        <img src="{% static 'img/airtable_logo.svg' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="home_sec3_card_body">
+                                        <img src="{% static 'img/airtable_logo.svg' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="home_sec3_card_body">
+                                        <img src="{% static 'img/airtable_logo.svg' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="home_sec3_card_body">
+                                        <img src="{% static 'img/airtable_logo.svg' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="home_sec3_card_body">
+                                        <img src="{% static 'img/airtable_logo.svg' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="home_sec3_card_body">
+                                        <img src="{% static 'img/airtable_logo.svg' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="home_sec3_card_body">
+                                        <img src="{% static 'img/airtable_logo.svg' %}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="home_section_four">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-5 col-sm-12">
+                    <div class="home_sec4_card_body_div" id="home_sec4_card1" data-aos="fade-down">
+                        <button type="button">Choose Agent <img src="{% static 'img/mdi_arrow-up.svg' %}"
+                                alt=""></button>
+                        <h1>Our Predefined AI Agents</h1>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-12">
+                    <div class="home_sec4_card_body_div" id="home_sec4_card2" data-aos="fade-up">
+                        <button type="button">Customized Your Agent<img src="{% static 'img/mdi_arrow-up.svg' %}"
+                                alt=""></button>
+                        <h1>Can’t Find What You Need? Let’s Build It Together.</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="home_section_five">
+        <div class="container">
+            <div class="title_div" data-aos="fade-down">
+                <h2>What Our Clients Are Saying</h2>
+            </div>
+            <div class="home_sec5_cards_main">
+                <div class="home_sec5_card_inner" data-aos="fade-down">
+                    <div class="home_sec5_card_inner_txt">
+                        <h4>"Our lead qualification process is now automated — and our conversion rate has improved!"
+                        </h4>
+                        <p>– Ayesha K., Marketing Director</p>
+                    </div>
+                    <img src="{% static 'img/pro1.svg' %}" alt="">
+                </div>
+                <div class="home_sec5_card_inner" data-aos="fade-down">
+                    <img src="{% static 'img/pro2.svg' %}" alt="">
+                    <div class="home_sec5_card_inner_txt">
+                        <h4>"The Reception Agent has cut down 80% of repetitive questions we used to handle manually."
+                        </h4>
+                        <p>– James R., Small Business Owner</p>
+                    </div>
+                </div>
+                <div class="home_sec5_card_inner" data-aos="fade-down">
+                    <div class="home_sec5_card_inner_txt">
+                        <h4>"Our lead qualification process is now automated — and our conversion rate has improved!"
+                        </h4>
+                        <p>– Sarah K., Manager</p>
+                    </div>
+                    <img src="{% static 'img/pro3.svg' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="schedule_section">
+        <div class="container">
+            <div class="schedule_sec_inner_main" data-aos="flip-left">
+                <div class="schedule_sec_txt_main">
+                    <h1>Still unsure which agent to choose?</h1>
+                    <p>Book a 15-minute discovery call — we’ll show you how Agentis can save you time and money
+                        instantly.</p>
+                </div>
+                <div class="schedule_sec_btn">
+                    <button type="button">Schedule a Call</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <div class="footer_text1">
+                        <h2>Agentis</h2>
+                        <p>The purpose of Agentis is to empower small businesses with custom AI agents that save time,
+                            automate tasks, and grow smarter.</p>
+                        <h4>Social Media</h4>
+                        <div class="footer_social_icons">
+                            <a href="#" target="_blank"><img src="{% static 'img/si1.svg' %}" alt=""></a>
+                            <a href="#" target="_blank"><img src="{% static 'img/si2.svg' %}" alt=""></a>
+                            <a href="#" target="_blank"><img src="{% static 'img/si3.svg' %}" alt=""></a>
+                            <a href="#" target="_blank"><img src="{% static 'img/si4.svg' %}" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="footer_links">
+                                <a href="#">Home</a>
+                                <a href="#">About</a>
+                                <a href="#">Pricing</a>
+                                <a href="#">Features</a>
+                                <a href="#">AI Agents</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="footer_links text-start">
+                                <a href="#">Log in</a>
+                                <a href="#">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="footer_text2">
+                        <p>
+                            <b>Email</b>
+                            <a href="mailto:info@agentis.ai" target="_blank">info@agentis.ai</a>
+                        </p>
+                        <p>
+                            <b>Phone</b>
+                            <a href="tel:+44 20 7123 4567" target="_blank">+44 20 7123 4567</a>
+                        </p>
+                        <p>
+                            <b>Timing</b>
+                            <a href="#"> 9:00 AM – 6:00 PM</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="last_footer_txt">
+        <p>© All rights reserved by <b>Agentis AI.</b></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./assets/js/script.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1200,
+        });
+    </script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 'auto',
+            spaceBetween: 30,
+            loop: true,
+            freeMode: true,
+            speed: 3000,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                200: {
+                    slidesPerView: 1,
+                    spaceBetween: 10
+                },
+                480: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 40
+                }
+            }
+        });
+    </script>
+
+
+
+</body>
+
+</html>

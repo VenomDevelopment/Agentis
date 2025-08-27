@@ -1,0 +1,73 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from the user's project
+#  so they should be tracked if the user is actively working on a project that uses an installer.
+#  If one of these files is unexpectedly large to commit, it may be worth checking this rule.
+# *.manifest
+# *.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+.pytest_cache/
+.coverage
+.tox/
+.nox/
+/htmlcov/
+
+# Venv
+venv/
+.venv/
+
+# Environment variables
+.env
+env
+.flaskenv
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+/media
+
+# Sentry config
+.sentryclirc
+
+# IPython Notebook
+.ipynb_checkpoints
+
+# VS Code
+.vscode/
+
+# Editor specific files
+.idea/
+.DS_Store
+*.swp

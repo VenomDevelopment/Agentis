@@ -1,0 +1,579 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGENTIS - Cart </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <Header class="header_section">
+        <div class="container">
+            <div class="header_inner_main">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="{% url 'index' %}">Agentis</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
+                            <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'agents' %}">Agents</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'index' %}#how-it-works">How It Works</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'pricing' %}">Pricing</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'affiliate' %}">Affiliate</a>
+                                </li>
+                                <!-- <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li> -->
+                        </ul>
+                        <div class="navbtn" role="search">
+                            {% if user.is_authenticated %}
+    <a href="{% url 'logout' %}"><button type="button">Log Out</button></a>
+{% else %}
+    <a href="{% url 'signup' %}"><button type="button">Sign Up</button></a>
+{% endif %}
+                        </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </Header> 
+    
+    <section class="pricing_hero_section">
+        <div class="container">
+            <div class="pricing_hero_text_main">
+                <div data-aos="fade-down">
+                    <h1>Checkout</h1>
+                    <p>Finalize your plan and get your AI agent up and running.</p>
+                </div>
+                <div class="hero_two_btns mt-3 justify-content-start" data-aos="fade-up">
+                    <button type="button">Explore Prices</button>
+                    <button class="d-none" type="button">Explore AI Agents</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cart_section_one">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12 col-sm-12">
+                    <div class="cart_card1_main">
+                        <h3 class="cart_title">Billing Address</h3>
+                        <div class="cart1_inputs_main_div">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="cart1_input_inner">
+                                        <input type="text" placeholder="Alex" id="FirstName">
+                                        <label for="FirstName">First Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="cart1_input_inner">
+                                        <input type="text" placeholder="Driver" id="LastName">
+                                        <label for="LastName">Last Name</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart1_input_inner">
+                                <input type="text" placeholder="username@gmail.com" id="Email">
+                                <label for="Email">Email Address</label>
+                            </div>
+                            <div class="cart1_input_inner">
+                                <input type="text" placeholder="" id="Street">
+                                <label for="Street">Street Address</label>
+                            </div>
+                            <div class="cart1_input_inner">
+                                <input type="text" placeholder="" id="Street2">
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="cart1_input_inner">
+                                       <select class="form-select" id="Country">
+                                        <option value="" selected disabled>Country</option>
+                                        <option value="USA">USA</option>
+                                        <option value="UK">UK</option>
+                                        <option value="Pakistan">Pakistan</option>
+                                        <option value="Afganistan">Afganistan</option>
+                                       </select>
+                                        <label for="Country">Country</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="cart1_input_inner">
+                                        <input type="text" placeholder="San Diego" id="City">
+                                        <label for="City">City</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="cart1_input_inner">
+                                        <input type="text" placeholder="22434" id="PostalCode">
+                                        <label for="PostalCode">Zip/Postal Code</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="cart1_input_inner">
+                                        <input type="text" placeholder="+ 123 456 789 111" id="Phone">
+                                        <label for="Phone">Phone</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart_terms pt-2">
+                                <input type="checkbox" id="term1">
+                                <label for="term1">My billing and shipping address are the same</label>
+                            </div>
+                            <div class="cart_terms">
+                                <input type="checkbox" id="term2">
+                                <label for="term2">Create an account for later use</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart_card1_main">
+                        <h3 class="cart_title">Payment Method</h3>
+                        <div class="cart_card2_inner_main mt-4">
+                            <div class="paymentoption1" id="paypal-option" onclick="selectPayment('paypal')">
+                                <div class="paymentoption1_checkbox">
+                                    <input type="radio" name="payment" id="paypal">
+                                    <label for="paypal">PayPal </label>
+                                </div>
+                                <span style="font-weight:normal;">You will be redirected to the PayPal website after submitting your order</span>
+                                <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" class="paypal-logo" alt="PayPal">
+                            </div>
+
+                            <!-- Credit Card Option -->
+                            <div class="paymentoption2" id="credit-option" onclick="selectPayment('credit')">
+                                <div class="paymentoption2_inner1">
+                                    <div class="paymentoption1_checkbox">
+                                        <input type="radio" name="payment" id="credit-card" checked>
+                                        <label for="credit-card">Pay with Credit Card</label>
+                                    </div>
+                                    <div class="card_logos">
+                                        <img src="{% static 'img/pm1.svg' %}" alt="Visa">
+                                        <img src="{% static 'img/pm2.svg' %}" alt="">
+                                        <img src="{% static 'img/pm3.svg' %}" alt="">
+                                        <img src="{% static 'img/pm4.svg' %}" alt="">
+                                    </div>
+                                </div>
+                                 <div class="row">
+                                    <div class="col-lg-5 col-md-5 col-sm-12">
+                                        <div class="cart1_input_inner">
+                                            <input type="number" placeholder="1234 5678 9101 3456" id="Cardnumber">
+                                            <label for="Cardnumber">Cardnumber</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-12">
+                                        <div class="cart1_input_inner">
+                                            <input type="number" placeholder="MM/YY" id="ExpirationDate">
+                                            <label for="ExpirationDate">ExpirationDate</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-12">
+                                        <div class="cart1_input_inner">
+                                            <input type="text" placeholder="***" id="Security">
+                                            <label for="Security">Card Security Code</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-sm-12">
+                                        <div class="what_this_txt">
+                                            <a href="#">What is this?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart_terms pt-2">
+                            <img src="{% static 'img/lock.svg' %}" alt="">
+                            <label for="lock">We protect your payment information using encryption to provide bank-level security.</label>
+                        </div>
+                    </div>
+                    <div class="cart_terms ps-5">
+                        <label for="">I understand this is a monthly subscription. Cancel anytime from your dashboard.</label>
+                    </div>
+                    <div class="cart_terms ps-5">
+                        <input type="checkbox" id="updates">
+                        <label for="updates">Email me updates and AI usage tips.</label>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6 col-sm-12 mx-auto">
+                    <div class="cart_right_accordions_main">
+                        <div class="accordion" id="accordionPanelsStayOpenExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+                                    <div class="accordion_btn_txt">
+                                        <p>Order Review</p>
+                                        <span>02 items in card</span>
+                                    </div>
+                                </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+                                    <div class="accordion-body">
+                                        <div class="cart_order_rev_main">
+                                            <div class="cart_order_rev_inner_main">
+                                                <div class="cart_order_rev_left">
+                                                    <img src="{% static 'img/or1.svg' %}" alt="">
+                                                    <div>
+                                                        <h5>Phone Agent</h5>
+                                                        <div class="quantity-container">
+                                                            <button class="quantity-btn minus">−</button>
+                                                            <input type="text" class="quantity-input" value="2" readonly>
+                                                            <button class="quantity-btn plus">+</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="cart_order_rev_right">
+                                                    <p>Setup Fee</p>
+                                                    <h2>$99.00 <span>(One-time)</span></h2>
+                                                </div>
+                                                <i class="bi bi-x-lg"></i>
+                                            </div>
+                                            <div class="cart_order_rev_bottom">
+                                                <span>Monthly Subscription</span>
+                                                <span>(Paid Monthly)</span>
+                                                <span>$49.00/month</span>
+                                            </div>
+                                        </div>
+                                        <div class="cart_order_rev_main">
+                                            <div class="cart_order_rev_inner_main">
+                                                <div class="cart_order_rev_left">
+                                                    <img src="{% static 'img/or1.svg' %}" alt="">
+                                                    <div>
+                                                        <h5>Phone Agent</h5>
+                                                        <div class="quantity-container">
+                                                            <button class="quantity-btn minus">−</button>
+                                                            <input type="text" class="quantity-input" value="2" readonly>
+                                                            <button class="quantity-btn plus">+</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="cart_order_rev_right">
+                                                    <p>Setup Fee</p>
+                                                    <h2>$99.00 <span>(One-time)</span></h2>
+                                                </div>
+                                                <i class="bi bi-x-lg"></i>
+                                            </div>
+                                            <div class="cart_order_rev_bottom">
+                                                <span>Monthly Subscription</span>
+                                                <span>(Paid Monthly)</span>
+                                                <span>$49.00/month</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+                                    <div class="accordion_btn_txt">
+                                        <p>Billing Summary</p>
+                                    </div>
+                                </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo">
+                                    <div class="accordion-body">
+                                        <div class="cart_bil_sum_txt">
+                                            <p>Total Due Today</p>
+                                            <p>$99.00</p>
+                                        </div>
+                                        <div class="cart_bil_sum_txt">
+                                            <p>Next Billing Date</p>
+                                            <p>$99.00</p>
+                                        </div>
+                                        <div class="cart_bil_sum_txt2">
+                                            <h3>Grand Total </h3>
+                                            <h3>$99.00</h3>
+                                        </div>
+                                        <div class="cart_terms">
+                                            <p>14-Days Satisfaction Guarantee included </p>
+                                        </div>
+                                        <div class="cart_terms">
+                                            <input type="checkbox" id="acknowledge">
+                                            <label for="acknowledge">Please check to acknowledge our <a href="#">Privacy & Terms Policy </a></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart_right_accordions_btns">
+                            <button type="button">Pay $99.00</button>
+                            <a href="#">Explore More Agents</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="home_section_three">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="home_sec3_txt" data-aos="fade-down">
+                        <h1>Trusted by Local & Digital Businesses</h1>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-12 col-sm-12">
+                    <div class="home_sec3_swiper_main">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="home_sec3_card_body">
+                                        <img src="{% static 'img/airtable_logo.svg' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="home_sec3_card_body">
+                                        <img src="{% static 'img/airtable_logo.svg' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="home_sec3_card_body">
+                                        <img src="{% static 'img/airtable_logo.svg' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="home_sec3_card_body">
+                                        <img src="{% static 'img/airtable_logo.svg' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="home_sec3_card_body">
+                                        <img src="{% static 'img/airtable_logo.svg' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="home_sec3_card_body">
+                                        <img src="{% static 'img/airtable_logo.svg' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="home_sec3_card_body">
+                                        <img src="{% static 'img/airtable_logo.svg' %}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+    <div class="home_section_five">
+        <div class="container">
+            <div class="title_div" data-aos="fade-down">
+                <h2>What Our Clients Are Saying</h2>
+            </div>
+            <div class="home_sec5_cards_main">
+                <div class="home_sec5_card_inner" data-aos="fade-down">
+                    <div class="home_sec5_card_inner_txt">
+                        <h4>"Our lead qualification process is now automated — and our conversion rate has improved!"</h4>
+                        <p>– Ayesha K., Marketing Director</p>
+                    </div>
+                    <img src="{% static 'img/pro1.svg' %}" alt="">
+                </div>
+                <div class="home_sec5_card_inner" data-aos="fade-down">
+                    <img src="{% static 'img/pro2.svg' %}" alt="">
+                    <div class="home_sec5_card_inner_txt">
+                        <h4>"The Reception Agent has cut down 80% of repetitive questions we used to handle manually."</h4>
+                        <p>– James R., Small Business Owner</p>
+                    </div>
+                </div>
+                <div class="home_sec5_card_inner" data-aos="fade-down">
+                    <div class="home_sec5_card_inner_txt">
+                        <h4>"Our lead qualification process is now automated — and our conversion rate has improved!"</h4>
+                        <p>– Sarah K., Manager</p>
+                    </div>
+                    <img src="{% static 'img/pro3.svg' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="schedule_section">
+        <div class="container">
+            <div class="schedule_sec_inner_main" data-aos="flip-left">
+                <div class="schedule_sec_txt_main">
+                    <h1>Still unsure which agent to choose?</h1>
+                    <p>Book a 15-minute discovery call — we’ll show you how Agentis can save you time and money instantly.</p>
+                </div>
+                <div class="schedule_sec_btn">
+                    <button type="button">Schedule a Call</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <div class="footer_text1">
+                        <h2>Agentis</h2>
+                        <p>The purpose of Agentis is to empower small businesses with custom AI agents that save time, automate tasks, and grow smarter.</p>
+                        <h4>Social Media</h4>
+                        <div class="footer_social_icons">
+                            <a href="#" target="_blank"><img src="{% static 'img/si1.svg' %}" alt=""></a>
+                            <a href="#" target="_blank"><img src="{% static 'img/si2.svg' %}" alt=""></a>
+                            <a href="#" target="_blank"><img src="{% static 'img/si3.svg' %}" alt=""></a>
+                            <a href="#" target="_blank"><img src="{% static 'img/si4.svg' %}" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="footer_links">
+                                <a href="#">Home</a>
+                                <a href="#">About</a>
+                                <a href="#">Pricing</a>
+                                <a href="#">Features</a>
+                                <a href="#">AI Agents</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="footer_links text-start">
+                                <a href="#">Log in</a>
+                                <a href="#">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="footer_text2">
+                        <p>
+                            <b>Email</b>
+                            <a href="mailto:info@agentis.ai" target="_blank">info@agentis.ai</a>
+                        </p>
+                         <p>
+                            <b>Phone</b>
+                            <a href="tel:+44 20 7123 4567" target="_blank">+44 20 7123 4567</a>
+                        </p>
+                         <p>
+                            <b>Timing</b>
+                            <a href="#"> 9:00 AM – 6:00 PM</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="last_footer_txt">
+        <p>© All rights reserved by <b>Agentis AI.</b></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./assets/js/script.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1200,
+        });
+    </script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 'auto',
+            spaceBetween: 30,
+            loop: true,
+            freeMode: true,
+            speed: 3000,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+            200: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            },
+            480: {
+                slidesPerView: 2,
+                spaceBetween: 20
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 40
+            }
+            }
+        });
+    </script>
+
+    <script>
+        function selectPayment(method) {
+            let paypalOption = document.getElementById('paypal-option');
+            let creditOption = document.getElementById('credit-option');
+            let paypalRadio = document.getElementById('paypal');
+            let creditRadio = document.getElementById('credit-card');
+
+            // Remove previous selection style
+            paypalOption.classList.remove('selected');
+            creditOption.classList.remove('selected');
+
+            // Apply selection
+            if (method === 'paypal') {
+                paypalRadio.checked = true;
+                paypalOption.classList.add('selected');
+            } else {
+                creditRadio.checked = true;
+                creditOption.classList.add('selected');
+            }
+        }
+
+        // Default selection on page load
+        window.onload = () => {
+            selectPayment('credit');
+        }
+    </script>
+
+    <script>
+        // Select all quantity containers
+        document.querySelectorAll(".quantity-container").forEach(container => {
+            const minusBtn = container.querySelector(".minus");
+            const plusBtn = container.querySelector(".plus");
+            const input = container.querySelector(".quantity-input");
+
+            minusBtn.addEventListener("click", () => {
+                let value = parseInt(input.value);
+                if (value > 1) {
+                    input.value = value - 1;
+                }
+            });
+
+            plusBtn.addEventListener("click", () => {
+                let value = parseInt(input.value);
+                input.value = value + 1;
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,490 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGENTIS - Agents Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <Header class="header_section">
+        <div class="container">
+            <div class="header_inner_main">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="{% url 'index' %}">Agentis</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-3">
+                            <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'agents' %}">Agents</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'index' %}#how-it-works">How It Works</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'pricing' %}">Pricing</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'affiliate' %}">Affiliate</a>
+                                </li>
+                                <!-- <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li> -->
+                        </ul>
+                            <div class="navbtn" role="search">
+                                {% if user.is_authenticated %}
+    <a href="{% url 'logout' %}"><button type="button">Log Out</button></a>
+{% else %}
+    <a href="{% url 'signup' %}"><button type="button">Sign Up</button></a>
+{% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </Header> 
+    
+    <section class="agents_hero_section">
+        <div class="container">
+            <div class="agents_hero_text_main">
+                <div data-aos="fade-down">
+                    <h1>AI Agents That Work While You Sleep</h1>
+                    <p>AI Agents That Work While You Sleep</p>
+                </div>
+                <div class="hero_two_btns mt-3" data-aos="fade-up">
+                    <button type="button">Explore AI Agents</button>
+                    <button class="d-none" type="button">Explore AI Agents</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="agents_details_section_one">
+        <div class="container">
+            <div class="ag_det_sec1_inner_main" id="agents_detail_one">
+                <div class="row">
+                    <div class="col-lg-7 col-md-9 col-sm-12 mx-auto">
+                        <div class="ag_det_sec1_img ad_small">
+                            <img src="{% static 'img/ad1.svg' %}" alt="...">
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-9 col-sm-12 mx-auto">
+                        <div class="ag_det_sec1_txt ad_small">
+                            <h1>Phone AI Agent</h1>
+                            <div>
+                                <p>Answers calls, qualifies needs, books or transfers.</p>
+                                <span>💶 Setup: €1,099 → €799</span>
+                                <span>🔁 Monthly: €199 (incl. 100 calls)</span>
+                            </div>
+                            <button type="button"> Get This Agent</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5 col-md-9 col-sm-12 mx-auto">
+                        <div class="ag_det_sec1_txt">
+                            <h1>Appointment Agent</h1>
+                            <div>
+                                <p>Manages bookings based on your calendar.</p>
+                                <span>💶 Setup: €799 → €499</span>
+                                <span>🔁 Monthly: €89</span>
+                            </div>
+                            <button type="button"> Get This Agent</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-9 col-sm-12 mx-auto">
+                        <div class="ag_det_sec1_img">
+                            <img src="{% static 'img/ad2.svg' %}" alt="...">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-7 col-md-9 col-sm-12 mx-auto">
+                        <div class="ag_det_sec1_img">
+                            <img src="{% static 'img/ad3.svg' %}" alt="...">
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-9 col-sm-12 mx-auto">
+                        <div class="ag_det_sec1_txt">
+                            <h1>Website Chatbot / FAQ</h1>
+                            <div>
+                                <p>Auto-responds to FAQs, captures leads.</p>
+                                <span>💶 Setup: €899 → €599</span>
+                                <span>🔁 Monthly: €89</span>
+                            </div>
+                            <button type="button"> Get This Agent</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5 col-md-9 col-sm-12 mx-auto">
+                        <div class="ag_det_sec1_txt">
+                            <h1>Email AI (Auto Replies)</h1>
+                            <div>
+                                <p>Replies to common emails using smart templates.</p>
+                                <span>💶 Setup: €849 → €549</span>
+                                <span>🔁 Monthly: €99</span>
+                            </div>
+                            <button type="button"> Get This Agent</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-9 col-sm-12 mx-auto">
+                        <div class="ag_det_sec1_img">
+                            <img src="{% static 'img/ad4.svg' %}" alt="...">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-7 col-md-9 col-sm-12 mx-auto">
+                        <div class="ag_det_sec1_img">
+                            <img src="{% static 'img/ad5.svg' %}" alt="...">
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-9 col-sm-12 mx-auto">
+                        <div class="ag_det_sec1_txt">
+                            <h1>Follow-Up Agent</h1>
+                            <div>
+                                <p>Follows up on quotes and lost leads automatically.</p>
+                                <span>💶 Setup: €749 → €449</span>
+                                <span>🔁 Monthly: €69</span>
+                            </div>
+                            <button type="button"> Get This Agent</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ag_det_sec1_inner_main" id="agents_detail_two">
+                <div class="row">
+                    <div class="col-lg-7 col-md-9 col-sm-12 mx-auto">
+                        <div class="ag_det_sec1_img">
+                            <img src="{% static 'img/ad6.svg' %}" alt="...">
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-9 col-sm-12 mx-auto">
+                        <div class="ag_det_sec1_txt">
+                            <h1>Lead Qualification Bot</h1>
+                            <div>
+                                <p>Engages, asks questions, filters quality leads.</p>
+                                <span>💶 Setup: €849 → €549</span>
+                                <span>🔁 Monthly: €99</span>
+                            </div>
+                            <button type="button"> Get This Agent</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5 col-md-9 col-sm-12 mx-auto">
+                        <div class="ag_det_sec1_txt ad_small">
+                            <h1>Quote Generator</h1>
+                            <div>
+                                <p>Builds and sends quotes based on form or email.</p>
+                                <span>💶 Setup: €849 → €549</span>
+                                <span>🔁 Monthly: €99</span>
+                            </div>
+                            <button type="button"> Get This Agent</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-9 col-sm-12 mx-auto">
+                        <div class="ag_det_sec1_img ad_small">
+                            <img src="{% static 'img/ad7.svg' %}" alt="...">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-7 col-md-9 col-sm-12 mx-auto">
+                        <div class="ag_det_sec1_img">
+                            <img src="{% static 'img/ad8.svg' %}" alt="...">
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-9 col-sm-12 mx-auto">
+                        <div class="ag_det_sec1_txt">
+                            <h1>Email Sorting Agent</h1>
+                            <div>
+                                <p>Sorts, prioritizes, and labels your emails.</p>
+                                <span>💶 Setup: €799 → €499</span>
+                                <span>🔁 Monthly: €89</span>
+                            </div>
+                            <button type="button"> Get This Agent</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5 col-md-9 col-sm-12 mx-auto">
+                        <div class="ag_det_sec1_txt">
+                            <h1>WhatsApp Responder</h1>
+                            <div>
+                                <p>Answers common questions via WhatsApp.</p>
+                                <span>💶 Setup: €799 → €499</span>
+                                <span>🔁 Monthly: €79</span>
+                            </div>
+                            <button type="button"> Get This Agent</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-9 col-sm-12 mx-auto">
+                        <div class="ag_det_sec1_img">
+                            <img src="{% static 'img/ad9.svg' %}" alt="...">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-7 col-md-9 col-sm-12 mx-auto">
+                        <div class="ag_det_sec1_img">
+                            <img src="{% static 'img/ad10.svg' %}" alt="...">
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-9 col-sm-12 mx-auto">
+                        <div class="ag_det_sec1_txt">
+                            <h1>Social Media Content Agent</h1>
+                            <div>
+                                <p>Weekly content ideas for Instagram, LinkedIn, etc.</p>
+                                <span>💶 Setup: €799 → €499</span>
+                                <span>🔁 Monthly: €69</span>
+                            </div>
+                            <button type="button"> Get This Agent</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination_btns">
+                <button type="button" class="active" data-target="agents_detail_one"></button> 
+                <button type="button" data-target="agents_detail_two"></button> 
+            </div>
+        </div>
+    </section>
+
+    <section class="home_section_three">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="home_sec3_txt" data-aos="fade-down">
+                        <h1>Trusted by Local & Digital Businesses</h1>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-12 col-sm-12">
+                    <div class="home_sec3_swiper_main">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="home_sec3_card_body">
+                                        <img src="{% static 'img/airtable_logo.svg' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="home_sec3_card_body">
+                                        <img src="{% static 'img/airtable_logo.svg' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="home_sec3_card_body">
+                                        <img src="{% static 'img/airtable_logo.svg' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="home_sec3_card_body">
+                                        <img src="{% static 'img/airtable_logo.svg' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="home_sec3_card_body">
+                                        <img src="{% static 'img/airtable_logo.svg' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="home_sec3_card_body">
+                                        <img src="{% static 'img/airtable_logo.svg' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="home_sec3_card_body">
+                                        <img src="{% static 'img/airtable_logo.svg' %}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="home_section_five">
+        <div class="container">
+            <div class="title_div" data-aos="fade-down">
+                <h2>What Our Clients Are Saying</h2>
+            </div>
+            <div class="home_sec5_cards_main">
+                <div class="home_sec5_card_inner" data-aos="fade-down">
+                    <div class="home_sec5_card_inner_txt">
+                        <h4>"Our lead qualification process is now automated — and our conversion rate has improved!"</h4>
+                        <p>– Ayesha K., Marketing Director</p>
+                    </div>
+                    <img src="{% static 'img/pro1.svg' %}" alt="">
+                </div>
+                <div class="home_sec5_card_inner" data-aos="fade-down">
+                    <img src="{% static 'img/pro2.svg' %}" alt="">
+                    <div class="home_sec5_card_inner_txt">
+                        <h4>"The Reception Agent has cut down 80% of repetitive questions we used to handle manually."</h4>
+                        <p>– James R., Small Business Owner</p>
+                    </div>
+                </div>
+                <div class="home_sec5_card_inner" data-aos="fade-down">
+                    <div class="home_sec5_card_inner_txt">
+                        <h4>"Our lead qualification process is now automated — and our conversion rate has improved!"</h4>
+                        <p>– Sarah K., Manager</p>
+                    </div>
+                    <img src="{% static 'img/pro3.svg' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="schedule_section">
+        <div class="container">
+            <div class="schedule_sec_inner_main" data-aos="flip-left">
+                <div class="schedule_sec_txt_main">
+                    <h1>Still unsure which agent to choose?</h1>
+                    <p>Book a 15-minute discovery call — we’ll show you how Agentis can save you time and money instantly.</p>
+                </div>
+                <div class="schedule_sec_btn">
+                    <button type="button">Schedule a Call</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-6 col-sm-12">
+                    <div class="footer_text1">
+                        <h2>Agentis</h2>
+                        <p>The purpose of Agentis is to empower small businesses with custom AI agents that save time, automate tasks, and grow smarter.</p>
+                        <h4>Social Media</h4>
+                        <div class="footer_social_icons">
+                            <a href="#" target="_blank"><img src="{% static 'img/si1.svg' %}" alt=""></a>
+                            <a href="#" target="_blank"><img src="{% static 'img/si2.svg' %}" alt=""></a>
+                            <a href="#" target="_blank"><img src="{% static 'img/si3.svg' %}" alt=""></a>
+                            <a href="#" target="_blank"><img src="{% static 'img/si4.svg' %}" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="footer_links">
+                                <a href="#">Home</a>
+                                <a href="#">About</a>
+                                <a href="#">Pricing</a>
+                                <a href="#">Features</a>
+                                <a href="#">AI Agents</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="footer_links text-start">
+                                <a href="#">Log in</a>
+                                <a href="#">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="footer_text2">
+                        <p>
+                            <b>Email</b>
+                            <a href="mailto:info@agentis.ai" target="_blank">info@agentis.ai</a>
+                        </p>
+                         <p>
+                            <b>Phone</b>
+                            <a href="tel:+44 20 7123 4567" target="_blank">+44 20 7123 4567</a>
+                        </p>
+                         <p>
+                            <b>Timing</b>
+                            <a href="#"> 9:00 AM – 6:00 PM</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="last_footer_txt">
+        <p>© All rights reserved by <b>Agentis AI.</b></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./assets/js/script.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1200,
+        });
+    </script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 'auto',
+            spaceBetween: 30,
+            loop: true,
+            freeMode: true,
+            speed: 3000,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+            200: {
+                slidesPerView: 1,
+                spaceBetween: 10
+            },
+            480: {
+                slidesPerView: 2,
+                spaceBetween: 20
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 40
+            }
+            }
+        });
+    </script>
+
+    <script>
+        document.querySelectorAll('.pagination_btns button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.pagination_btns button').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                // Hide all sections
+                document.querySelectorAll('.ag_det_sec1_inner_main').forEach(sec => sec.style.display = 'none');
+
+                // Show target section
+                const targetId = this.getAttribute('data-target');
+                document.getElementById(targetId).style.display = 'block';
+            });
+        });
+    </script>
+
+</body>
+</html>

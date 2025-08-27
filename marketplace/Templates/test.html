@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <style>
+        .paymentoption1 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .paymentoption1,
+        .paymentoption2 {
+            border: 1px solid #B2BCCA;
+            border-radius: 8px;
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        .paymentoption2_inner1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .paymentoption1 input,
+        .paymentoption2 input[type="radio"] {
+            margin-right: 10px;
+            accent-color: blue;
+        }
+
+        .paymentoption1 label {
+            flex: 1;
+            font-weight: bold;
+        }
+
+        .paypal-logo {
+            width: 40px;
+        }
+
+        .paymentoption2 {
+            display: block;
+        }
+
+        /* Highlight selected method */
+        .selected {
+            background: #e6f3ff;
+            border-color: #3399ff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PayPal Option -->
+    <div class="paymentoption1" id="paypal-option" onclick="selectPayment('paypal')">
+        <div class="paymentoption1_checkbox">
+            <input type="radio" name="payment" id="paypal">
+            <label for="paypal">PayPal </label>
+        </div>
+        <span style="font-weight:normal;">You will be redirected to the PayPal website after submitting your
+            order</span>
+        <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" class="paypal-logo" alt="PayPal">
+    </div>
+
+    <!-- Credit Card Option -->
+    <div class="paymentoption2" id="credit-option" onclick="selectPayment('credit')">
+        <div class="paymentoption2_inner1">
+            <div class="paymentoption1_checkbox">
+                <input type="radio" name="payment" id="credit-card" checked>
+                <label for="credit-card">Pay with Credit Card</label>
+            </div>
+            <div class="card-logos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Mastercard-logo.png" alt="Mastercard">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Discover_Card_logo.svg" alt="Discover">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function selectPayment(method) {
+            let paypalOption = document.getElementById('paypal-option');
+            let creditOption = document.getElementById('credit-option');
+            let paypalRadio = document.getElementById('paypal');
+            let creditRadio = document.getElementById('credit-card');
+
+            // Remove previous selection style
+            paypalOption.classList.remove('selected');
+            creditOption.classList.remove('selected');
+
+            // Apply selection
+            if (method === 'paypal') {
+                paypalRadio.checked = true;
+                paypalOption.classList.add('selected');
+            } else {
+                creditRadio.checked = true;
+                creditOption.classList.add('selected');
+            }
+        }
+
+        // Default selection on page load
+        window.onload = () => {
+            selectPayment('credit');
+        }
+    </script>
+
+</body>
+</html>

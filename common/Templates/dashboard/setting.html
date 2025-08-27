@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentis - Download</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+
+    <section class="dashboard_section">
+        <div class="sidebar_main">
+            <div class="sidebar" id="sidebar">
+                <div class="sidebar_profile">
+                        <div class="sidebar_profile_img">
+                            <div class="cancel-btn" id="cancelBtn">×</div>
+                            <img src="../assets/img/dash_pro.svg' %}" alt="">
+                            <span>4</span>
+                        </div>
+                        <h3>Samantha</h3>
+                        <a href="#">samantha@email.com</a>
+                    </div>
+                <div class="sidebar_inner">
+                    <div class="sidebar_links_main">
+                        <a href="dashboard.html" class="sidebar_links">Dashboard</a>
+                        <a href="myagents.html" class="sidebar_links">My Agents</a>
+                        <a href="billing.html" class="sidebar_links">Billing and Subscription</a>
+                        <a href="download.html" class="sidebar_links">Downloads</a>
+                        <a href="setting.html" class="sidebar_links active">Setting</a>
+                    </div>
+                </div>
+                    <div class="sidebar_bottom_main">
+                        <a href="support.html" class="sidebar_links">Support</a>
+                        <div class="logout_btn">
+                            <a href="#"><button type="button">Logout</button></a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        
+        <div class="dash_main">
+            <div class="dashboard_content_main">
+                <div class="dashboard_left_content">
+                    <div class="dashboard_header">
+                        <div class="dash_title">
+                            <h3>
+                                <span class="toggle-btn" id="toggleBtn">☰</span>
+                               Account Settings</h3>
+                        </div>
+                    </div>
+                    <div class="setting_inputs_main">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="setting_input_inner">
+                                    <label for="name">Name</label>
+                                    <input id="name" type="text" placeholder="Samantha">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="setting_input_inner">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" placeholder="samantha@email.com">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="setting_input_inner">
+                                    <label for="password">Password</label>
+                                    <input type="text" id="password" placeholder="********sfhj">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="setting_input_inner">
+                                    <label for="con_password">Confirm Password</label>
+                                    <input type="text" id="con_password" placeholder="********sfhj">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dash_title2">
+                        <h3>Security</h3>
+                        <button type="button">Purchase New One</button>
+                    </div>
+
+                    <div class="security_bottom_main">
+                        <h3>2FA Status</h3>
+                        <div class="security_bottom_inner">
+                            <h5>Status: <span>Enabled</span></h5>
+                            <p>Your account is protected with two-factor authentication. This adds an extra layer of security using a verification code sent to your mobile device.</p>
+                            <div class="security_bottom_inner_btn">
+                                <button type="button">Change Method</button>
+                                <span>or</span>
+                                <a href="#">Disable</a>
+                            </div>
+                        </div>
+                         <div class="security_bottom_inner_btn mt-3">
+                                <p>Not enabled yet?</p>
+                                <button type="button">Change Method</button>
+                            </div>
+                    </div>
+
+                </div>
+                <div class="dashboard_right_content">
+                    <h4>Last Login</h4>
+                   <div class="dash_sett_right_content_inner1">
+                        <button type="button" class="active">
+                            <span>Date & Time</span>
+                            <b>July 28, 2025 — 09:47 AM</b>
+                        </button>
+                        <div class="mt-3">
+                            <p>Location: Islamabad, Pakistan</p>
+                            <p>Device: Chrome on Windows 10</p>
+                            <p>IP Address: 192.168.1.55</p>
+                        </div>
+                   </div>
+                    <div class="dash_title2">
+                        <button type="button">View Login History</button>
+                    </div>
+                   <div class="dashboard_right_content_inner2">
+                        <h6>Authorized Devices</h6>
+                        <p>You’ve logged into Agentis from the following devices</p>
+                        <div class="setting_right_inner2_card">
+                            <h3>Chrome - Windows 10</h3>
+                            <h4>✅ Active</h4>
+                            <p>Location: Islamabad, Pakistan</p>
+                            <p>Last active: Today, 09:47 AM</p>
+                            <p>IP: 192.168.1.55</p>
+                        </div>
+                        <div class="setting_right_inner2_card">
+                            <h3>Safari - iPhone 13</h3>
+                            <h4>❌ Logged Out</h4>
+                            <p>Location: Lahore, Pakistan</p>
+                            <p>Last active: July 22, 09:47 AM</p>
+                            <p>IP: 192.168.3.12</p>
+                        </div>
+                        <div class="dash_title2">
+                            <button type="button">Manage Devices</button>
+                        </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="../assets/js/dashboard.js"></script>
+
+</body>
+</html>

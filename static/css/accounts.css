@@ -1,0 +1,364 @@
+@font-face {
+    font-family: "Satoshi_Light";
+    src: url(../fonts/Satoshi-Light.otf);
+}
+@font-face {
+    font-family: "Satoshi_Medium";
+    src: url(../fonts/Satoshi-Medium.otf);
+}
+@font-face {
+    font-family: "Satoshi_Regular";
+    src: url(../fonts/Satoshi-Regular.otf);
+}
+@font-face {
+    font-family: "Satoshi_Bold";
+    src: url(../fonts/Satoshi-Bold.otf);
+}
+@font-face {
+    font-family: "Azonix";
+    src: url(../fonts/Azonix.otf);
+}
+/* {
+    font-family: "Satoshi_Light";
+    font-family: "Satoshi_Medium";
+    font-family: "Satoshi_Regular";
+    font-family: "Satoshi_Bold";
+} */
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: "Satoshi_Regular";
+    background-color: #FFFFFF;
+}
+.accounts_section{
+    width: 100%;
+    display: flex;
+    background-image: url(../img/accounts2.svg);
+    height: auto;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+}
+.accounts_section#join_plateform{
+    background-image: url(../img/join.svg);
+    background-size: calc(100% - 61%) auto;
+}
+.accounts_img_div{
+    width: 38%;
+    background-image: url(../img/accounts2.svg);
+    height: auto;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: cover;
+    display: none;
+}
+.accounts_card_main{
+    width: 100%;
+    display: flex;
+}
+.accouns_card_right{
+    width: 65%;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    padding: 60px 0px;
+    background-color: #F4F4F5;
+    margin-left: auto;
+    border-radius: 12px 0px 0px 12px;
+}
+.accouns_card_body_div{
+    width: 100%;
+    max-width: 576px;
+    margin: auto;
+    background-color: #F4F4F5;
+    min-height: 300px;
+}
+.accounts_title{
+    text-align: center;
+}
+.accounts_title img{
+    margin: 40px 0px;
+}
+.accounts_title h1{
+    font-weight: 600;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 0;
+    color: #0A2540;
+}
+.accounts_title h1 span{
+    color: #FF7F3E;
+}
+.accounts_title h1 span.signup_span{
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+.accounts_title p{
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+    color: #0A2540;
+    margin-top: 40px;
+}
+.accounts_title p a{
+    color: #00A5FF;
+}
+.accounts_input_inner{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 25px;
+}
+.accounts_input_inner label{
+    font-weight: 400;
+    font-size: 20px;
+    color: #6B7280;
+}
+.accounts_input_inner input{
+    background-color: #B0BAC366;
+    border-radius: 4px;
+    border: none;
+    padding: 14px 16px;
+    color: #6B7280;
+    font-weight: 400;
+    font-size: 16px;
+    outline: none;
+}
+.accounts_input_inner input::placeholder{
+    color: #ABABAB;
+    font-weight: 400;
+    font-size: 16px;
+}
+.terms_div{
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+    align-items: center;
+}
+.Forgot_div a{
+    display: block;
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #0A2540;
+    cursor: pointer;
+    text-decoration: none;
+}
+.terms_div label{
+    font-weight: 400;
+    font-size: 14px;
+    color: #0A2540;
+    cursor: pointer;
+}
+.terms_div input{
+    accent-color: #0A2540;
+    height: 18px;
+    width: 18px;
+}
+.terms_div label a{
+    color: #00A5FF;
+    text-decoration: none;
+}
+.accounts_btn button{
+    background: #2563EB;
+    padding: 10px 16px;
+    margin-top: 30px;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    width: 100%;
+}
+.accounts_social_icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 30px;
+}
+.accounts_social_icons button{
+    font-weight: 400;
+    font-size: 14px;
+    color: #6B7280;
+    font-weight: 500;
+    font-size: 14px;
+    border: 1px solid #6B7280;
+    padding: 8px 12px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    min-width: 200px;
+}
+.accounts_social_icons button img{
+    height: 25px;
+    width: auto;
+}
+.accounts_last{
+    margin-bottom: 0;
+    font-weight: 400;
+    font-size: 18px;
+    color: #6B7280;
+    margin-top: 30px;
+}
+.accounts_last a{
+    text-decoration: none;
+    color: #2563EB;
+    font-weight: 600;
+}
+.or_txt{
+    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: #B0BAC3;
+    margin-top: 30px;
+}
+.join_plateform_card_body{
+    width: 100%;
+    max-width: 576px;
+    margin: auto;
+    background-color: #F4F4F5;
+    min-height: 300px;
+    padding: 0px 20px;
+}
+.join_plateform_title{
+    text-align: center;
+}
+.join_plateform_title h1{
+    font-family: "Satoshi_Medium";
+    font-weight: 600;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 0;
+    color: #1F2937;
+}
+.join_plateform_title p{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    color: #6B7280;
+}
+.join_platform_card_body{
+    margin-top: 30px;
+    border: 2px solid #F4F4F5;
+    padding: 15px 15px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.join_platform_card_body.active{
+    border: 2px solid #6EE7B7;
+}
+.join_platform_card_body:hover{
+    border: 2px solid #6EE7B7;
+}
+.join_platform_card_body h3{
+    font-family: "Satoshi_Medium";
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    color: #1F2937;
+    border-radius: 8px;
+}
+.join_platform_card_body p{
+    font-weight: 400;
+    font-size: 20px;
+    color: #6B7280;
+    margin-bottom: 0;
+}
+@media (max-width: 1366px){
+    .accounts_img_div {
+        width: 45%;
+        background-size: cover;
+    }
+}
+@media (max-width: 992px){
+    .accounts_section {
+        width: 100%;
+        background-image: url(../img/Form2.svg);
+        height: auto;
+        min-height: 100vh;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .accounts_img_div{
+        display: none;
+    }
+    .accouns_card_right{
+        width: 100%;
+        height: auto;
+        padding: 0 0px 60px 0px;
+    }
+    .accouns_card_body_div{
+        max-width: 576px;
+        padding: 50px 20px;
+        border-radius: 6px;
+    }
+    .accounts_social_icons{
+        flex-wrap: wrap;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

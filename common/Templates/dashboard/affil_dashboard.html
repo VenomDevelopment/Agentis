@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentis - Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+
+    <section class="dashboard_section">
+        <div class="sidebar_main">
+            <div class="sidebar" id="sidebar">
+                <div class="sidebar_profile">
+                        <div class="sidebar_profile_img">
+                            <div class="cancel-btn" id="cancelBtn">×</div>
+                            <img src="../assets/img/dash_pro.svg' %}" alt="">
+                            <span>4</span>
+                        </div>
+                        <h3>Samantha</h3>
+                        <a href="#">samantha@email.com</a>
+                    </div>
+                <div class="sidebar_inner">
+                    <div class="sidebar_links_main">
+                        <a href="dashboard.html" class="sidebar_links">Dashboard</a>
+                        <a href="affil_dashboard.html" class="sidebar_links active">Affiliate</a>
+                        <a href="myagents.html" class="sidebar_links">My Agents</a>
+                        <a href="billing.html" class="sidebar_links">Billing and Subscription</a>
+                        <a href="download.html" class="sidebar_links">Downloads</a>
+                        <a href="setting.html" class="sidebar_links ">Setting</a>
+                    </div>
+                </div>
+                    <div class="sidebar_bottom_main">
+                        <a href="support.html" class="sidebar_links">Support</a>
+                        <div class="logout_btn">
+                            <a href="#"><button type="button">Logout</button></a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        
+        <div class="dash_main">
+            <div class="dashboard_content_main">
+                <div class="dashboard_left_content">
+                    <div class="dashboard_header">
+                        <div class="dash_title">
+                            <h3>
+                                <span class="toggle-btn" id="toggleBtn">☰</span>
+                                Here’s what’s happening in your workspace today.</h3>
+                            <p>01 - 25 March, 2020</p>
+                            
+                        </div>
+                    </div>
+                    <div class="dash_title2">
+                        <h3>Performance Stats</h3>
+                    </div>
+                    <div class="affil_dash_top_card_main">
+                        <div class="affil_dash_top_card_inner">
+                            <p>Total Clicks</p>
+                            <h3>254</h3>
+                        </div>
+                        <div class="affil_dash_top_card_inner">
+                            <p>Total Leads</p>
+                            <h3>43</h3>
+                        </div>
+                        <div class="affil_dash_top_card_inner">
+                            <p>Converted Leads</p>
+                            <h3>18</h3>
+                        </div>
+                        <div class="affil_dash_top_card_inner">
+                            <p>Earned Commission</p>
+                            <h3>$4,500</h3>
+                        </div>
+                    </div>
+                    <div class="dash_title2">
+                        <h3>Performance Stats</h3>
+                        <button type="button">Purchase New One</button>
+                    </div>
+                    <div class="affil_dash_table_main">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col"><p class="ad_tble_p">Date</p></th>
+                                    <th scope="col"><p class="ad_tble_p">Company Name</p></th>
+                                    <th scope="col"><p class="ad_tble_p">Status</p></th>
+                                    <th scope="col"><p class="ad_tble_p">Amount Earned</p></th>
+                                    <th scope="col"><p class="ad_tble_p">Notes</p></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>July 28</td>
+                                    <td>ABC Corp</td>
+                                    <td>💰 Paid</td>
+                                    <td>€1350</td>
+                                    <td>Paid on Aug 1</td>
+                                </tr>
+                                <tr>
+                                    <td>July 30</td>
+                                    <td>XYZ Ltd</td>
+                                    <td>⏳ Pending</td>
+                                    <td>€0</td>
+                                    <td>Under review</td>
+                                </tr>
+                                <tr>
+                                    <td>Aug 02</td>
+                                    <td>MetaForge</td>
+                                    <td>✅ Approved</td>
+                                    <td>€1200</td>
+                                    <td>Scheduled Aug 10</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="dashboard_right_content">
+                    <h4>Referral Link</h4>
+                   <div class="refl_link_copy">
+                    <input type="text" value="https://agentis.ai/?ref=yourusername" readonly>
+                    <button type="button">Copy Link</button>
+                   </div>
+                   <div class="dash_earn_card">
+                        <p>Earn on each sale</p>
+                        <div class="dash_earn_card_inner">
+                            <h1>40</h1>
+                            <span>percent</span>
+                        </div>
+                   </div>
+                   <div class="dashboard_right_content_inner2">
+                        <h6>Announcements and Tips</h6>
+                        <p><span>New</span> Custom Prompt Library Now Available</p>
+                        <p><span>Tip</span> Use tags to better organize your agents</p>
+                        <button type="button">View Tips</button>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="../assets/js/dashboard.js"></script>
+
+</body>
+</html>
